@@ -1,0 +1,7 @@
+<h1>Сервер {{ ansible_hostname }}</h1>
+<ul>
+  <li>CPU model: {{ ansible_processor[2] }} ({{ ansible_processor_vcpus }} vCPU)</li>
+  <li>RAM: {{ ansible_memtotal_mb }} MB</li>
+  <li>First disk: {{ ansible_devices.sda.size }}</li>
+  <li>IP: {{ ansible_default_ipv4.address }}</li>
+</ul>
