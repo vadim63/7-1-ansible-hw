@@ -1,9 +1,5 @@
 # Домашнее задание к занятию "Ansible. Часть 2" - Качьянов Вадим
-      - для корректного добавления скриншотов воспользуйтесь [инструкцией "Как вставить скриншот в шаблон с решением](https://github.com/netology-code/sys-pattern-homework/blob/main/screen-instruction.md)
-      - при оформлении используйте возможности языка разметки md (коротко об этом можно посмотреть в [инструкции  по MarkDown](https://github.com/netology-code/sys-pattern-homework/blob/main/md-instruction.md))
-   4. После завершения работы над домашним заданием сделайте коммит (`git commit -m "comment"`) и отправьте его на Github (`git push origin`);
-   5. В личном кабинете прикрепите и отправьте ссылку на решение в виде md-файла в вашем Github.
-   6. Любые вопросы по выполнению заданий спрашивайте в разделе “Вопросы по заданию” в личном кабинете.
+ в личном кабинете.
 
 ### Задание 1
 
@@ -11,7 +7,8 @@
 
 
 
-1. ```
+**Плейбук 1** 
+```yaml
 ---
 - name: Download and unpacking Kafka
   hosts: web
@@ -37,7 +34,8 @@
         creates: /home/vadim/kafka/kafka-4.1.2-src
 ```
 
-2. ```
+**Плейбук 2** 
+```yaml
 ---
 - name: Download and start daemon "tuned"
   hosts: web
@@ -58,7 +56,8 @@
 
 ```
 
-3. ```
+**Плейбук 3** 
+```yaml
 ---
 - name: Change message of the day
   hosts: web
@@ -87,7 +86,7 @@
 В данном задании был модифицрован 3 плейбук
 
 
-```
+```yaml
 ---
 - name: Change message of the day
   hosts: web
@@ -115,7 +114,7 @@
 
 В данном задании была написана роль
 
-```
+```yaml
 ---
 # tasks file for roles/apache
 - name: Download Apache
