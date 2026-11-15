@@ -11,13 +11,13 @@
 
     - name: Create dir
       ansible.builtin.file:
-        path: /home/qwerty/kafka
+        path: /home/vadim/kafka
         state: directory
         mode: "0755"
 
     - name: Unpacking archive
       ansible.builtin.unarchive:
         src: /tmp/kafka-4.1.2-src.tgz
-        dest: /home/qwerty/kafka
+        dest: /home/vadim/kafka
         remote_src: true
-        creates: /home/qwerty/kafka/kafka-4.1.2-src
+        creates: /home/vadim/kafka/kafka-4.1.2-src
