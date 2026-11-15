@@ -1,0 +1,13 @@
+---
+- name: Change message of the day
+  hosts: web
+  become: true
+
+  vars:
+    motd_txt: "Welcome!"
+
+  tasks:
+    - name: Change config
+      ansible.builtin.copy:
+        dest: /etc/motd
+        content: "{{ motd_txt }}\n"

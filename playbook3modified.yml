@@ -1,0 +1,16 @@
+---
+- name: Change message of the day
+  hosts: web
+  become: true
+
+  vars:
+    motd_txt: |
+      Hostname: {{ ansible_facts['hostname'] }},
+      IP address: {{ ansible_facts['default_ipv4']['address'] }}.
+      Have a nice day, sysadmin!
+
+  tasks:
+    - name: Change config
+      ansible.builtin.copy:
+        dest: /etc/motd
+        content: "{{ motd_txt }}\n"

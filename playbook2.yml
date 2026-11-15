@@ -1,0 +1,17 @@
+---
+- name: Download and start daemon "tuned"
+  hosts: web
+  become: true
+
+  tasks:
+    - name: Install "tuned"
+      ansible.builtin.apt:
+        name: tuned
+        state: present
+        update_cache: true
+
+    - name: Start daemon
+      ansible.builtin.systemd:
+        name: tuned
+        state: started
+        enabled: true

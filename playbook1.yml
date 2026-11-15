@@ -1,0 +1,23 @@
+---
+- name: Download and unpacking Kafka
+  hosts: web
+
+  tasks:
+    - name: Download Kafka
+      ansible.builtin.get_url:
+        url: https://downloads.apache.org/kafka/4.1.2/kafka-4.1.2-src.tgz
+        dest: /tmp/kafka-4.1.2-src.tgz
+        mode: "0644"
+
+    - name: Create dir
+      ansible.builtin.file:
+        path: /home/qwerty/kafka
+        state: directory
+        mode: "0755"
+
+    - name: Unpacking archive
+      ansible.builtin.unarchive:
+        src: /tmp/kafka-4.1.2-src.tgz
+        dest: /home/qwerty/kafka
+        remote_src: true
+        creates: /home/qwerty/kafka/kafka-4.1.2-src
